@@ -5,6 +5,13 @@ In this repo, you will find code to interact in python with [Azure CosmosDB](htt
 ## Why?
 It has been created for the purpose of a Use-Case project in a BeCode AI class. (Bouman4)
 
+## Provide read access to learners
+To provide a read-only access to the learners you can give them the credentials that are stored in:
+
+`Azure` -> `CosmosDB` -> `<Your Cosmos instance>` -> `Keys` -> `Read-Only Keys`.
+
+The `PRIMARY READ-ONLY CONNECTION STRING` should be enough, but you can also provide the `URI` and the `PRIMARY READ-ONLY KEY`.
+
 ## Installation
 In order for the project to run, you need to:
 
