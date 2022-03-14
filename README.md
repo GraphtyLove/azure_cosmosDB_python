@@ -52,6 +52,7 @@ In [read_database.py](./read_database.py) you will find the code used to read a 
 To write this code I used some resources:
 - This [article](https://towardsdatascience.com/python-azure-cosmos-db-f212c9a8a0e6) but it seams outdated. I used to for the global logic but the code wasn't working with the latest Azure-Cosmos python SDK. I had to look into the Microsoft documentation to correct it.
 - The [Azure-Cosmos official documentation](https://docs.microsoft.com/en-us/python/api/overview/azure/cosmosdb?view=azure-python). Which is really great!
+- How to [query CosmosDB in python using SQL](https://docs.microsoft.com/en-us/python/api/overview/azure/cosmos-readme?view=azure-python#query-the-database)
 
 ## Who?
 Written by *Maxim Berge* the *14/03/2022*.

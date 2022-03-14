@@ -6,14 +6,19 @@ import pandas as pd
 from typing import List, Tuple
 from azure.cosmos.cosmos_client import CosmosClient
 from azure.cosmos.database import DatabaseProxy
+from dotenv import load_dotenv
+
 
 # Store the secrets from Azure Cosmos DB
 # The secrets are environements variable that can be loaded in a .env file
 # Read more here: https://dev.to/jakewitcher/using-env-files-for-environment-variables-in-python-applications-55a1
+load_dotenv("./.env")
+
+
 db_config = {
-    "url": os.environ["DB_URL"],
-    "primary_key": os.environ["DB_SECRET"],
-    "database_name": os.environ["DB_NAME"]
+    "url": os.environ("DB_URL"),
+    "primary_key": os.environ("DB_SECRET"),
+    "database_name": os.environ("DB_NAME")
 }
 
 def create_cosmos_container(db_proxy_client: DatabaseProxy, partition_key: str, container_name: str) -> None:
@@ -97,7 +102,6 @@ def write_dataframe_on_cosmosdb(db_proxy_client: DatabaseProxy, dataframe: pd.Da
             json.loads(row_json)
         )
         print(f'Record {i}/{dataframe_row_len} inserted successfully.')
-
 
 
 if __name__ == "__main__":
